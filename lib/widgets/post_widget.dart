@@ -23,30 +23,39 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    print(height);
+    print(width);
     return Container(
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text(
-                userName,
-                textAlign: TextAlign.start,
-                style: TextStyle(color: Colors.white),
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  userName,
+                  style: TextStyle(color: Colors.white),
                 ),
-                alignment: Alignment(88, 0),
-                onPressed: null,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 267),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                  ),
+                  alignment: Alignment.centerRight,
+                  onPressed: null,
+                ),
               )
             ],
           ),
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.all(5),
-            height: 300,
+            height: 350,
             width: double.infinity,
             child: Text(
               'Image',
@@ -63,7 +72,6 @@ class Post extends StatelessWidget {
                   Icons.favorite_border,
                   color: Colors.white,
                 ),
-                alignment: Alignment(-2, 0),
               ),
               IconButton(
                 onPressed: null,
@@ -71,7 +79,6 @@ class Post extends StatelessWidget {
                   Icons.add_comment,
                   color: Colors.white,
                 ),
-                alignment: Alignment(-5, 0),
               ),
               IconButton(
                 onPressed: null,
@@ -79,14 +86,15 @@ class Post extends StatelessWidget {
                   Icons.send,
                   color: Colors.white,
                 ),
-                alignment: Alignment(-7, 0),
               ),
-              IconButton(
-                alignment: Alignment(57, 0),
-                onPressed: null,
-                icon: Icon(
-                  Icons.bookmark_border,
-                  color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.only(left: 219),
+                child: IconButton(
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.bookmark_border,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

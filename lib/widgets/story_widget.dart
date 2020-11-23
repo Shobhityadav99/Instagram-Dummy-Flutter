@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class StoryWidget extends StatelessWidget {
-  String imageUrl;
+  final String imageUrl;
   StoryWidget(this.imageUrl);
   @override
   Widget build(BuildContext context) {
