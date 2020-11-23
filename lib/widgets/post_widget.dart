@@ -40,7 +40,7 @@ class Post extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 267),
+                padding: const EdgeInsets.only(left: 230),
                 child: IconButton(
                   icon: Icon(
                     Icons.more_vert,
@@ -64,7 +64,6 @@ class Post extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               IconButton(
                 onPressed: null,

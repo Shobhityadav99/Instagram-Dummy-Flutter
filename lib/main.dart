@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_dummy/widgets/post_widget.dart';
 import './widgets/story_widget.dart';
+import 'widgets/bottom_nav_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,6 +105,10 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: username.length,
             ),
           ),
+          Container(
+            child: BottomNav(),
+            color: Colors.pink,
+          )
         ],
       ),
     );
