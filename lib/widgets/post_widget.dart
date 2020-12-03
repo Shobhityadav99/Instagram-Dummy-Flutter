@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class Post extends StatelessWidget {
   final String userName;
   Post(this.userName);
-
   Widget _caption(String val) {
     return Column(children: <Widget>[
       Container(
@@ -23,31 +22,35 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-    print(height);
-    print(width);
     return Container(
       child: Column(
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  userName,
-                  style: TextStyle(color: Colors.white),
-                ),
+              Row(
+                children: <Widget>[
+                  CircleAvatar(
+                    radius: 16,
+                    backgroundColor: Colors.pink,
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    userName,
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 230),
+              Container(
                 child: IconButton(
                   icon: Icon(
                     Icons.more_vert,
                     color: Colors.white,
                   ),
-                  alignment: Alignment.centerRight,
                   onPressed: null,
+                  alignment: Alignment.centerRight,
                 ),
               )
             ],
@@ -55,7 +58,7 @@ class Post extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.all(5),
-            height: 350,
+            height: 250,
             width: double.infinity,
             child: Text(
               'Image',
@@ -63,31 +66,34 @@ class Post extends StatelessWidget {
             color: Colors.white,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.favorite_border,
-                  color: Colors.white,
-                ),
+              Row(
+                children: <Widget>[
+                  IconButton(
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.favorite_border,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.add_comment,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.send,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-              IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.add_comment,
-                  color: Colors.white,
-                ),
-              ),
-              IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.send,
-                  color: Colors.white,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 219),
+              Container(
                 child: IconButton(
                   onPressed: null,
                   icon: Icon(
