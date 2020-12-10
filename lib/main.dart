@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insta_dummy/widgets/post_widget.dart';
 import './widgets/story_widget.dart';
 import 'widgets/bottom_nav_widget.dart';
+import './screens/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }

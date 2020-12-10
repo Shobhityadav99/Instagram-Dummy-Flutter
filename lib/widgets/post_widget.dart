@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Post extends StatelessWidget {
+class Post extends StatefulWidget {
   final String userName;
   Post(this.userName);
+
+  @override
+  _PostState createState() => _PostState();
+}
+
+class _PostState extends State<Post> {
   Widget _caption(String val) {
     return Column(children: <Widget>[
       Container(
@@ -18,6 +24,14 @@ class Post extends StatelessWidget {
         height: 10,
       ),
     ]);
+  }
+
+  bool isFavorite = false;
+
+  void toggleIcon() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
   }
 
   @override
@@ -38,7 +52,7 @@ class Post extends StatelessWidget {
                     width: 8,
                   ),
                   Text(
-                    userName,
+                    widget.userName,
                     style: TextStyle(color: Colors.white),
                   )
                 ],
@@ -56,29 +70,31 @@ class Post extends StatelessWidget {
             ],
           ),
           Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.all(5),
-            height: 250,
-            width: double.infinity,
-            child: Text(
-              'Image',
-            ),
-            color: Colors.white,
-          ),
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(5),
+              height: 250,
+              color: Colors.white,
+              width: double.infinity,
+              child: GestureDetector(
+                onDoubleTap: toggleIcon,
+                child: Text(
+                  'Image',
+                ),
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Row(
                 children: <Widget>[
                   IconButton(
-                    onPressed: null,
+                    onPressed: toggleIcon,
                     icon: Icon(
-                      Icons.favorite_border,
-                      color: Colors.white,
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
                     ),
+                    color: isFavorite ? Colors.red : Colors.white,
                   ),
                   IconButton(
-                    onPressed: null,
+                    onPressed: toggleIcon,
                     icon: Icon(
                       Icons.add_comment,
                       color: Colors.white,
@@ -104,7 +120,7 @@ class Post extends StatelessWidget {
               ),
             ],
           ),
-          _caption(userName),
+          _caption(widget.userName),
           _caption('Description / Caption'),
           _caption('Comments'),
           _caption('Comments'),
