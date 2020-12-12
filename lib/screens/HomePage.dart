@@ -172,7 +172,10 @@ class _HomePageState extends State<HomePage> {
                         ))),
               ],
             ),
-            GridTile(child: Text('images'))
+            GridTile(
+                child: Text(
+              'images',
+            ))
           ]),
         ));
   }
