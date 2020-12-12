@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }

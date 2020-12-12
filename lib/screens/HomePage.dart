@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insta_dummy/widgets/story_widget.dart';
+import '../widgets/story_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,30 +10,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-            title: Text(
-              '_UserName_',
-              style: TextStyle(fontFamily: 'OpenSans'),
-            ),
-            actions: <Widget>[
-              IconButton(
-                  icon: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                  onPressed: null),
-              IconButton(
-                  icon: Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  ),
-                  onPressed: null)
-            ],
-            backgroundColor: Colors.black),
+          backgroundColor: Colors.black,
+          leading: IconButton(
+              icon: Icon(
+                Icons.lock_outline,
+                color: Colors.white,
+              ),
+              onPressed: null),
+          title: Text(
+            '_UserName_',
+            style: TextStyle(fontFamily: 'OpenSans'),
+          ),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+                onPressed: null),
+            IconButton(
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ),
+                onPressed: null)
+          ],
+        ),
         body: SingleChildScrollView(
           child: Column(children: <Widget>[
             Container(
-              color: Colors.black,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
@@ -83,7 +90,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              color: Colors.black,
               width: double.infinity,
               child: Padding(
                 padding: EdgeInsets.only(left: 10),
@@ -94,7 +100,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              color: Colors.black,
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
                 width: double.infinity,
@@ -115,7 +120,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              color: Colors.black,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -148,7 +152,27 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            )
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: FlatButton(
+                      onPressed: null,
+                      child: Icon(
+                        Icons.grid_on,
+                        color: Colors.white,
+                      )),
+                ),
+                Expanded(
+                    child: FlatButton(
+                        onPressed: null,
+                        child: Icon(
+                          Icons.portrait,
+                          color: Colors.white,
+                        ))),
+              ],
+            ),
+            GridTile(child: Text('images'))
           ]),
         ));
   }
