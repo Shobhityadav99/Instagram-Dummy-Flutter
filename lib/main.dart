@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -84,12 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Container(
-              height: 80,
+              height: 90,
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: username.length,
-                itemBuilder: (context, index) => StoryWidget(username[index]),
+                itemBuilder: (context, index) =>
+                    StoryWidget(username[index], username[index]),
               )),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 0.0),
