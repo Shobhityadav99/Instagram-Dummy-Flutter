@@ -6,7 +6,16 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = new TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,54 +137,65 @@ class _HomePageState extends State<HomePage> {
                     StoryWidget('imageUrl', 'userName'),
                     StoryWidget('imageUrl', 'userName'),
                     StoryWidget('imageUrl', 'userName'),
-                    FlatButton(
-                      onPressed: null,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: CircleAvatar(
-                            radius: 35,
-                            backgroundColor: Colors.black,
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 35,
+                    Column(
+                      children: <Widget>[
+                        FlatButton(
+                          onPressed: null,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(1.0),
+                              child: CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.black,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 35,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Text(
+                          'Add more',
+                          softWrap: true,
+                          textWidthBasis: TextWidthBasis.parent,
+                          textScaleFactor: 0.8,
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
                     ),
                   ],
                 ),
               ),
             ),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Expanded(
-                  child: FlatButton(
-                      onPressed: null,
-                      child: Icon(
-                        Icons.grid_on,
-                        color: Colors.white,
-                      )),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: TabBar(
+                    unselectedLabelColor: Colors.grey,
+                    labelColor: Colors.white,
+                    indicatorColor: Colors.white,
+                    tabs: [
+                      Tab(
+                        icon: Icon(Icons.grid_on),
+                      ),
+                      Tab(
+                        icon: Icon(Icons.portrait),
+                      )
+                    ],
+                    controller: _tabController,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                  ),
                 ),
-                Expanded(
-                    child: FlatButton(
-                        onPressed: null,
-                        child: Icon(
-                          Icons.portrait,
-                          color: Colors.white,
-                        ))),
               ],
             ),
-            GridTile(
-                child: Text(
-              'images',
-            ))
           ]),
         ));
   }
