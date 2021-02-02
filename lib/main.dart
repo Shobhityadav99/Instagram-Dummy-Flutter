@@ -3,7 +3,6 @@ import 'package:insta_dummy/screens/Chats_Screen.dart';
 import 'package:insta_dummy/widgets/post_widget.dart';
 import './widgets/story_widget.dart';
 import 'widgets/bottom_nav_widget.dart';
-import './screens/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,15 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          fontFamily: 'Billabong',
-          primarySwatch: Colors.blue,
-          backgroundColor: Colors.black,
-          textTheme: ThemeData.light()
-              .textTheme
-              .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-      home: ChatsScreen(),
-    );
+        theme: ThemeData(
+            fontFamily: 'Billabong',
+            primarySwatch: Colors.blue,
+            backgroundColor: Colors.black,
+            textTheme: ThemeData.light()
+                .textTheme
+                .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
+        home: MyHomePage());
   }
 }
 
@@ -35,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List username = [
-    'Golu_Kumar',
+    'Adi She',
     'Aar_Zoo',
     'Simdarth_Saand',
     'Anmol_Singh',
@@ -71,12 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: null,
           ),
           IconButton(
-            icon: Icon(
-              Icons.message,
-              color: Colors.white,
-            ),
-            onPressed: null,
-          ),
+              icon: Icon(
+                Icons.message,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatsScreen()),
+                );
+              }),
         ],
         backgroundColor: Colors.black,
         bottomOpacity: 0.2,

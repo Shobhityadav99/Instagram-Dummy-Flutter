@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:insta_dummy/main.dart';
+import 'package:insta_dummy/screens/HomePage.dart';
 
 class BottomNav extends StatelessWidget {
   @override
@@ -7,10 +9,14 @@ class BottomNav extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: IconButton(
-            icon: Icon(Icons.home, color: Colors.white),
-            onPressed: null,
-            color: Colors.white,
-          ),
+              icon: Icon(Icons.home, color: Colors.white),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                  
+                );
+              }),
         ),
         Expanded(
           child: IconButton(
@@ -33,8 +39,12 @@ class BottomNav extends StatelessWidget {
         Expanded(
           child: IconButton(
               icon: Icon(Icons.account_circle, color: Colors.white),
-              onPressed: null,
-              color: Colors.white),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              }),
         ),
       ],
     );

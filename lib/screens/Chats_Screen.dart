@@ -10,7 +10,12 @@ class _ChatsScreenState extends State<ChatsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(icon: Icon(Icons.arrow_back),
+          onPressed: () {
+                Navigator.pop(
+                  context,
+                );
+              }),
         title: Text(
           '_userName_',
           style: TextStyle(fontSize: 25, fontFamily: 'Raleway'),
@@ -33,38 +38,57 @@ class _ChatsScreenState extends State<ChatsScreen> {
               onPressed: null)
         ],
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Row(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  CircleAvatar(
+      body: Container(
+        color: Colors.black,
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15, right: 15, top: 8, bottom: 8),
+                  child: CircleAvatar(
                     radius: 30,
                     backgroundColor: Colors.pink,
                   ),
-                  Column(
+                ),
+                FlatButton(
+                  child: Column(
                     children: <Widget>[
                       Text(
                         'UserName',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
                       Text(
-                        'Message',
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        '69 new messages',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ],
-          );
-        },
-        itemCount: 2,
+                  onPressed: null,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 110),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.photo_camera,
+                      color: Colors.white,
+                    ),
+                    onPressed: null,
+                  ),
+                )
+              ],
+            );
+          },
+          itemCount: 2,
+        ),
       ),
     );
   }
