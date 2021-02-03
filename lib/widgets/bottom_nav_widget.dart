@@ -14,7 +14,6 @@ class BottomNav extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => MyHomePage()),
-                  
                 );
               }),
         ),

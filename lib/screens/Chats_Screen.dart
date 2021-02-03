@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Personal_chat.dart';
 
 class ChatsScreen extends StatefulWidget {
   @override
@@ -10,12 +11,13 @@ class _ChatsScreenState extends State<ChatsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back),
-          onPressed: () {
-                Navigator.pop(
-                  context,
-                );
-              }),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(
+                context,
+              );
+            }),
         title: Text(
           '_userName_',
           style: TextStyle(fontSize: 25, fontFamily: 'Raleway'),
@@ -43,6 +45,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
         child: ListView.builder(
           itemBuilder: (context, index) {
             return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(
@@ -72,22 +75,24 @@ class _ChatsScreenState extends State<ChatsScreen> {
                       ),
                     ],
                   ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PersonalChatScreen()));
+                  },
+                ),
+                IconButton(
+                  icon: Icon(
+                    Icons.photo_camera,
+                    color: Colors.white,
+                  ),
                   onPressed: null,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 110),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.photo_camera,
-                      color: Colors.white,
-                    ),
-                    onPressed: null,
-                  ),
-                )
               ],
             );
           },
-          itemCount: 2,
+          itemCount: 12,
         ),
       ),
     );
