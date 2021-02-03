@@ -9,7 +9,11 @@ class BottomNav extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: IconButton(
-              icon: Icon(Icons.home, color: Colors.white),
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+                size: 32,
+              ),
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
@@ -19,25 +23,41 @@ class BottomNav extends StatelessWidget {
         ),
         Expanded(
           child: IconButton(
-            icon: Icon(Icons.videocam, color: Colors.white),
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+              size: 32,
+            ),
             onPressed: null,
           ),
         ),
         Expanded(
           child: IconButton(
-              icon: Icon(Icons.add_box, color: Colors.white),
+              icon: Icon(
+                Icons.video_library,
+                color: Colors.white,
+                size: 32,
+              ),
               onPressed: null,
               color: Colors.white),
         ),
         Expanded(
           child: IconButton(
-              icon: Icon(Icons.favorite_border, color: Colors.white),
+              icon: Icon(
+                Icons.favorite_border,
+                color: Colors.white,
+                size: 32,
+              ),
               onPressed: null,
               color: Colors.white),
         ),
         Expanded(
           child: IconButton(
-              icon: Icon(Icons.account_circle, color: Colors.white),
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.white,
+                size: 32,
+              ),
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
