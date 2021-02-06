@@ -1,5 +1,6 @@
-import 'package:flappy_search_bar/flappy_search_bar.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:insta_dummy/widgets/personal_posts.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -10,15 +11,13 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: SearchBar(
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-            )),
+      backgroundColor: Colors.black,
+      body: TabBarView(
+        dragStartBehavior: DragStartBehavior.down,
+        children: [
+          PersonalPosts(),
+          PersonalPosts(),
+        ],
       ),
     );
   }
