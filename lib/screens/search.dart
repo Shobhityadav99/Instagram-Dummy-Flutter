@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:insta_dummy/widgets/bottom_nav_widget.dart';
 
-class SearchScreen extends StatefulWidget {
+class Search extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
 }
 
-class _BodyState extends State<SearchScreen> {
+class _BodyState extends State<Search> {
   TextEditingController controller;
 
   @override
