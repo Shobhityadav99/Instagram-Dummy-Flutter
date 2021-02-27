@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insta_dummy/main.dart';
 import 'package:insta_dummy/screens/HomePage.dart';
 import '../screens/Search_Screen.dart';
+import 'package:insta_dummy/screens/Activity_Screen.dart';
 
 class BottomNav extends StatelessWidget {
   @override
@@ -55,7 +56,12 @@ class BottomNav extends StatelessWidget {
                   color: Colors.white,
                   size: 30,
                 ),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => ActivityScreen()),
+                  );
+                },
                 color: Colors.white),
           ),
           Expanded(

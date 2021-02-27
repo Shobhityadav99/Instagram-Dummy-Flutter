@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_dummy/widgets/bottom_nav_widget.dart';
 
 class ActivityScreen extends StatefulWidget {
   @override
@@ -114,6 +115,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
