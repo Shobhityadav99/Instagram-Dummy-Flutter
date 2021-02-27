@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             textTheme: ThemeData.light()
                 .textTheme
                 .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-        home: ActivityScreen());
+        home: MyHomePage());
   }
 }
 
@@ -36,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List username = [
+    'Ashi Kanjar',
     'Adi She',
     'Aar_Zoo',
     'Simdarth_Saand',
@@ -55,27 +56,27 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(
-          'Instagarm',
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontFamily: 'Billabong',
-            fontSize: 36,
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
+        leading: IconButton(
             icon: Icon(
-              Icons.search,
+              Icons.add_box,
               color: Colors.white,
             ),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchScreen()),
+                MaterialPageRoute(builder: (context) => ChatsScreen()),
               );
-            },
+            }),
+        title: Center(
+          child: Text(
+            'Instagarm',
+            style: TextStyle(
+              fontFamily: 'Billabong',
+              fontSize: 36,
+            ),
           ),
+        ),
+        actions: <Widget>[
           IconButton(
               icon: Icon(
                 Icons.message,
@@ -118,12 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: username.length,
             ),
           ),
-          Container(
-            child: BottomNav(),
-            color: Colors.pink,
-          )
         ],
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }

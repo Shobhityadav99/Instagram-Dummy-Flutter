@@ -112,6 +112,21 @@ class _ActivityScreenState extends State<ActivityScreen> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 282),
+              child: Text(
+                'This Week',
+                style: TextStyle(
+                  fontFamily: 'Sans-Serif',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            )
           ],
         ),
       ),
