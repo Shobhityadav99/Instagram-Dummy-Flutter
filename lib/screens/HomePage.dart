@@ -72,29 +72,29 @@ class _HomePageState extends State<HomePage>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(10),
                   child: Text(
-                    '18\nposts',
+                    '20\nPosts',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(10),
                   child: Text(
-                    '120\nfollowers',
+                    '277\nFollowers',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(10),
                   child: Text(
-                    '97\nfollowing',
+                    '297\nFollowing',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 16,
                     ),
                   ),
                 ),

@@ -58,8 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         leading: IconButton(
             icon: Icon(
-              Icons.add_box,
+              Icons.search,
               color: Colors.white,
+              size: 28,
             ),
             onPressed: () {
               Navigator.push(
