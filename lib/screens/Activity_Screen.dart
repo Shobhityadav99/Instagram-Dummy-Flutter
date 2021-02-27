@@ -71,28 +71,16 @@ class _ActivityScreenState extends State<ActivityScreen> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 28,
             ),
             Row(
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(left: 10),
                   child: CircleAvatar(
-                    child: Container(
-                      alignment: Alignment(1, -1),
-                      child: CircleAvatar(
-                        child: Text(
-                          '16',
-                          style:
-                              TextStyle(fontFamily: 'Sans-Serif', fontSize: 15),
-                        ),
-                        backgroundColor: Colors.red,
-                        radius: 13,
-                      ),
-                    ),
                     radius: 28,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('assets/images/user.png'),
+                    backgroundImage: AssetImage('assets/images/insta_tick.jpg'),
                   ),
                 ),
                 FlatButton(
@@ -101,7 +89,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Follow Requests',
+                        "You're all caught up",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -111,11 +99,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
                         height: 5,
                       ),
                       Text(
-                        'Approve or ignore requests',
+                        'See new activity for FoodieStocks.69',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w300),
+                          color: Colors.blue,
+                          fontSize: 12,
+                        ),
                       ),
                     ],
                   ),
