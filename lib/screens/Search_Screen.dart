@@ -103,7 +103,7 @@ class _BodyState extends State<SearchScreen> {
     return Container(
       child: GridView.count(
         crossAxisCount: 3,
-        children: List.generate(10, (index) {
+        children: List.generate(18, (index) {
           return Center(
               child: Container(
             width: MediaQuery.of(context).size.width / 3,
