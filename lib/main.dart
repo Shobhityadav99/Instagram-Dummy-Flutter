@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:insta_dummy/screens/Chats_Screen.dart';
-import 'package:insta_dummy/screens/HomePage.dart';
+// import 'package:insta_dummy/screens/HomePage.dart';
 import 'package:insta_dummy/widgets/post_widget.dart';
 import './widgets/story_widget.dart';
 import 'widgets/bottom_nav_widget.dart';
 import 'package:insta_dummy/screens/Search_Screen.dart';
+import 'package:insta_dummy/screens/Activity_Screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             textTheme: ThemeData.light()
                 .textTheme
                 .copyWith(title: TextStyle(fontFamily: 'Billabong'))),
-        home: SearchScreen());
+        home: ActivityScreen());
   }
 }
 
@@ -68,7 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.search,
               color: Colors.white,
             ),
-            onPressed: null,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchScreen()),
+              );
+            },
           ),
           IconButton(
               icon: Icon(
