@@ -34,7 +34,7 @@ class _BodyState extends State<SearchScreen> {
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.access_time,
+                Icons.account_box,
                 color: Colors.white,
               ),
               onPressed: null,
