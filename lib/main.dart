@@ -99,12 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
               height: 90,
               child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: username.length,
-                itemBuilder: (context, index) =>
-                    StoryWidget(username[index], username[index]),
-              )),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: username.length,
+                  itemBuilder: (context, index) {
+                    if (index == 0) {
+                      return StoryWidget('MyName', 'Your Story');
+                    } else {
+                      return StoryWidget(username[index], username[index]);
+                    }
+                  })),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 0.0),
             child: Container(
