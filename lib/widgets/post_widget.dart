@@ -69,14 +69,14 @@ class _PostState extends State<Post> {
               )
             ],
           ),
-          Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.all(5),
-              height: 250,
-              color: Colors.white,
-              width: double.infinity,
-              child: GestureDetector(
-                onDoubleTap: toggleIcon,
+          GestureDetector(
+              onDoubleTap: toggleIcon,
+              child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(5),
+                height: 250,
+                color: Colors.white,
+                width: double.infinity,
                 child: Text(
                   'Image',
                 ),
