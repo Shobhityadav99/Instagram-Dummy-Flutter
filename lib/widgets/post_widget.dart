@@ -30,7 +30,7 @@ class _PostState extends State<Post> {
 
   void toggleIcon() {
     setState(() {
-      isFavorite = !isFavorite;
+      isFavorite = true;
     });
   }
 

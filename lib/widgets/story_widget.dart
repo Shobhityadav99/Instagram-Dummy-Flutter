@@ -23,12 +23,17 @@ class StoryWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              userName,
-              softWrap: true,
-              textWidthBasis: TextWidthBasis.parent,
-              textScaleFactor: 0.8,
-              style: TextStyle(color: Colors.white),
+            SizedBox(
+              width: 55,
+              child: Text(
+                userName,
+                softWrap: true,
+                textWidthBasis: TextWidthBasis.parent,
+                textScaleFactor: 0.8,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+                overflow: TextOverflow.ellipsis,
+              ),
             )
           ],
         ),
