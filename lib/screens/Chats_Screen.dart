@@ -44,19 +44,26 @@ class _ChatsScreenState extends State<ChatsScreen> {
         color: Colors.black,
         child: ListView.builder(
           itemBuilder: (context, index) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 15, right: 15, top: 8, bottom: 8),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.pink,
+            return FlatButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PersonalChatScreen()));
+              },
+              highlightColor: Colors.grey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 8, bottom: 8),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.pink,
+                    ),
                   ),
-                ),
-                FlatButton(
-                  child: Column(
+                  Column(
                     children: <Widget>[
                       Text(
                         'UserName',
@@ -67,7 +74,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
                         ),
                       ),
                       Text(
-                        '69 new messages',
+                        '6 new messages',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
@@ -75,21 +82,17 @@ class _ChatsScreenState extends State<ChatsScreen> {
                       ),
                     ],
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PersonalChatScreen()));
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.photo_camera,
-                    color: Colors.white,
+                  Expanded(
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.photo_camera,
+                        color: Colors.white,
+                      ),
+                      onPressed: null,
+                    ),
                   ),
-                  onPressed: null,
-                ),
-              ],
+                ],
+              ),
             );
           },
           itemCount: 12,
